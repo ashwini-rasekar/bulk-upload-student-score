@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains student.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function student_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the student module.
+    case 'help.page.student':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Entity to store student detials') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function student_theme() {
+  $theme = [];
+  $theme['student_entity'] = [
+    'render element' => 'elements',
+    'file' => 'student_entity.page.inc',
+    'template' => 'student_entity',
+  ];
+  $theme['student_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'student_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function student_theme_suggestions_student_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#student_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'student_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'student_entity__' . $entity->bundle();
+  $suggestions[] = 'student_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'student_entity__' . $entity->id();
+  $suggestions[] = 'student_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

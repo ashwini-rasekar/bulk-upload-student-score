@@ -1,0 +1,6 @@
+name: 'student'
+type: module
+description: 'Entity to store student detials'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Custom'

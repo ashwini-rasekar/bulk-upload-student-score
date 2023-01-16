@@ -1,0 +1,7 @@
+upload_details.upload_details:
+  path: '/upload_details/form/upload_details'
+  defaults:
+    _form: '\Drupal\upload_details\Form\UploadDetails'
+    _title: 'UploadDetails'
+  requirements:
+    _access: 'TRUE'

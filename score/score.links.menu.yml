@@ -1,0 +1,17 @@
+
+# Score entity menu items definition
+entity.score_entity.collection:
+  title: 'Score entity list'
+  route_name: entity.score_entity.collection
+  description: 'List Score entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Score entity type menu items definition
+entity.score_entity_type.collection:
+  title: 'Score entity type'
+  route_name: entity.score_entity_type.collection
+  description: 'List Score entity type (bundles)'
+  parent: system.admin_structure
+  weight: 99

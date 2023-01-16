@@ -1,0 +1,11 @@
+services:
+  #logger.channel.upload_details:
+   # parent: logger.channel_base
+    #arguments: ['upload_details']
+  #upload details service:
+   # class: Drupal\upload_details\UploadDetailsService
+    #arguments: []
+
+  upload_details.upload_student_details:
+   class: Drupal\upload_details\UploadDetailsService
+   arguments: ['@database']

@@ -1,0 +1,33 @@
+add score entity entities:
+  title: 'Create new Score entity entities'
+
+administer score entity entities:
+  title: 'Administer Score entity entities'
+  description: 'Allow to access the administration form to configure Score entity entities.'
+  restrict access: true
+
+delete score entity entities:
+  title: 'Delete Score entity entities'
+
+edit score entity entities:
+  title: 'Edit Score entity entities'
+
+view published score entity entities:
+  title: 'View published Score entity entities'
+
+view unpublished score entity entities:
+  title: 'View unpublished Score entity entities'
+
+view all score entity revisions:
+  title: 'View all Score entity revisions'
+
+revert all score entity revisions:
+  title: 'Revert all Score entity revisions'
+  description: 'Role requires permission <em>view Score entity revisions</em> and <em>edit rights</em> for score entity entities in question or <em>administer score entity entities</em>.'
+
+delete all score entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Score entity revisions</em> and <em>delete rights</em> for score entity entities in question or <em>administer score entity entities</em>.'
+
+permission_callbacks:
+  - \Drupal\score\ScoreEntityPermissions::generatePermissions

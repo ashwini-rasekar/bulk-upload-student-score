@@ -1,0 +1,33 @@
+add student entity entities:
+  title: 'Create new Student entity entities'
+
+administer student entity entities:
+  title: 'Administer Student entity entities'
+  description: 'Allow to access the administration form to configure Student entity entities.'
+  restrict access: true
+
+delete student entity entities:
+  title: 'Delete Student entity entities'
+
+edit student entity entities:
+  title: 'Edit Student entity entities'
+
+view published student entity entities:
+  title: 'View published Student entity entities'
+
+view unpublished student entity entities:
+  title: 'View unpublished Student entity entities'
+
+view all student entity revisions:
+  title: 'View all Student entity revisions'
+
+revert all student entity revisions:
+  title: 'Revert all Student entity revisions'
+  description: 'Role requires permission <em>view Student entity revisions</em> and <em>edit rights</em> for student entity entities in question or <em>administer student entity entities</em>.'
+
+delete all student entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Student entity revisions</em> and <em>delete rights</em> for student entity entities in question or <em>administer student entity entities</em>.'
+
+permission_callbacks:
+  - \Drupal\student\StudentEntityPermissions::generatePermissions

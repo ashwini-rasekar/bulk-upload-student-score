@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains score.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function score_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the score module.
+    case 'help.page.score':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Score entity to stores score of students') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function score_theme() {
+  $theme = [];
+  $theme['score_entity'] = [
+    'render element' => 'elements',
+    'file' => 'score_entity.page.inc',
+    'template' => 'score_entity',
+  ];
+  $theme['score_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'score_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function score_theme_suggestions_score_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#score_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'score_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'score_entity__' . $entity->bundle();
+  $suggestions[] = 'score_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'score_entity__' . $entity->id();
+  $suggestions[] = 'score_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

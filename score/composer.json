@@ -1,0 +1,13 @@
+{
+    "name": "score",
+    "type": "drupal-module",
+    "description": "Score entity to stores score of students",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/score",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/score",
+        "source": "http://cgit.drupalcode.org/score",
+    },
+}

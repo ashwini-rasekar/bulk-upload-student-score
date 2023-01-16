@@ -1,0 +1,17 @@
+
+# Student entity menu items definition
+entity.student_entity.collection:
+  title: 'Student entity list'
+  route_name: entity.student_entity.collection
+  description: 'List Student entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Student entity type menu items definition
+entity.student_entity_type.collection:
+  title: 'Student entity type'
+  route_name: entity.student_entity_type.collection
+  description: 'List Student entity type (bundles)'
+  parent: system.admin_structure
+  weight: 99

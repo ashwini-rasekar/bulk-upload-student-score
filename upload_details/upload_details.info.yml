@@ -1,0 +1,6 @@
+name: 'upload details'
+type: module
+description: 'Custom module for uploading details of students in bulk'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Custom'

@@ -1,0 +1,13 @@
+{
+    "name": "student",
+    "type": "drupal-module",
+    "description": "Entity to store student detials",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/student",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/student",
+        "source": "http://cgit.drupalcode.org/student",
+    },
+}
